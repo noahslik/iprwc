@@ -1,0 +1,10 @@
+<div class="card text-center m-2">
+    <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text">{{product.price | currency}}</p>
+        <button type="button" class="btn btn-primary" (click)="addToBasket(product)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasright"><i class="bi bi-bag-check"></i> Add to basket</button>
+    </div>
+</div>

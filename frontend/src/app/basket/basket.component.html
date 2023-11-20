@@ -1,0 +1,13 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="bi bi-basket"></i> Your Basket</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <app-basket-item *ngFor="let item of getBasketItems()" [item]="item"></app-basket-item>
+        <div class="text-end">
+            <p>Total Price: {{ getTotalPrice() | currency }}</p>
+            <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+        </div>
+    </div>
+</div>

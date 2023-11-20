@@ -1,10 +1,10 @@
-package com.noahslik.iprwc;
+package nl.noahslik.iprwc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IprwcApplicationTests {
+class MainTests {
 
 	@Test
 	void contextLoads() {
