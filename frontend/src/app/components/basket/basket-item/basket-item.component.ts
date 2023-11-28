@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BasketItem } from '../../../models/basket-item.model';
 import { FormsModule } from '@angular/forms';
-import { BasketService } from '../basket.service';
+import { BasketService } from '../../../services/basket.service';
 
 @Component({
   selector: 'app-basket-item',

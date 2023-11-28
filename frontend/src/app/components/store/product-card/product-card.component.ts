@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasketService } from '../../basket/basket.service';
+import { BasketService } from '../../../services/basket.service';
 import { Product } from '../../../models/product.model';
 
 @Component({
