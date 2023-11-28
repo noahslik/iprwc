@@ -2,6 +2,7 @@ package nl.noahslik.iprwc.controller;
 
 import nl.noahslik.iprwc.model.Product;
 import nl.noahslik.iprwc.service.ProductService;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;

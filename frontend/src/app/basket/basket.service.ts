@@ -31,4 +31,8 @@ export class BasketService {
     }
     return runningTotal;
   }
+
+  getLength() {
+    return this.items.length;
+  }
 }

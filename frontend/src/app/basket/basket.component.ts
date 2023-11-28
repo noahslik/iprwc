@@ -25,4 +25,8 @@ export class BasketComponent {
   getBasketItems() {
     return this.basketService.getItems();
   }
+
+  getLength() {
+    return this.basketService.getLength();
+  }
 }

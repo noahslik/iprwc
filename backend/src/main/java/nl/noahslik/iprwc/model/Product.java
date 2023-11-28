@@ -11,15 +11,18 @@ public class Product {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    private String artist;
     private Float price;
     private String imageUrl;
-    private String description;
+
 
     protected Product() {}
 
-    public Product(String name, Float price) {
+    public Product(String name, String artist, Float price, String imageUrl) {
         this.name = name;
+        this.artist = artist;
         this.price = price;
+        this.imageUrl = imageUrl;
     }
 
     @Override
@@ -74,11 +77,11 @@ public class Product {
         this.imageUrl = imageUrl;
     }
 
-    public String getDescription() {
-        return description;
+    public String getArtist() {
+        return artist;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setArtist(String description) {
+        this.artist = description;
     }
 }
