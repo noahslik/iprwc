@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../shared/models/product.model';
 import { BasketService } from './basket.service';
 import { BasketItemComponent } from "./basket-item/basket-item.component";
 

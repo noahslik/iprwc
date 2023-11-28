@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from "./product-card/product-card.component";
-import { Product } from '../shared/models/product.model';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ProductService } from '../product.service';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-store',

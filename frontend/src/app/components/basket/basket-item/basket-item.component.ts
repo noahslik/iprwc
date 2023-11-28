@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasketItem } from '../../shared/models/basket-item.model';
+import { BasketItem } from '../../../models/basket-item.model';
 import { FormsModule } from '@angular/forms';
 import { BasketService } from '../basket.service';
 
@@ -18,7 +18,7 @@ export class BasketItemComponent {
   constructor(private basketService: BasketService) {}
 
   increaseQuantity() {
-    
+
   }
 
   decreaseQuantity() {

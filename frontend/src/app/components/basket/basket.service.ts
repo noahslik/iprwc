@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../shared/models/product.model';
-import { BasketItem } from '../shared/models/basket-item.model';
+import { BasketItem } from '../../models/basket-item.model';
+import { Product } from '../../models/product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BasketService {
-  
+
   private items: BasketItem[] = [];
 
   addItem(product: Product) {

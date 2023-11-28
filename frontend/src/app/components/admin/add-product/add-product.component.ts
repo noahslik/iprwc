@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductService } from '../../product.service';
-import { Product } from '../../shared/models/product.model';
+import { ProductService } from '../../../services/product.service';
+import { Product } from '../../../models/product.model';
 import { ReactiveFormsModule, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
