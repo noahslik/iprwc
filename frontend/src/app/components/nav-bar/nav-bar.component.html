@@ -13,11 +13,12 @@
       </ul>
       <button class="btn btn-success mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
         aria-controls="offcanvasright"><i class="bi bi-basket"></i></button>
-      <div class="btn-group">
-        <button class="btn btn-outline-primary" type="button"><i class="bi bi-box-arrow-in-right"></i> Login</button>
-        <button class="btn btn-primary" type="button">Sign Up <i class="bi bi-person"></i></button>
+      <div *ngIf="authenticated === false" class="btn-group">
+        <button (click)="onLogin()" class="btn btn-outline-primary" type="button"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+        <button (click)="onSignup()" class="btn btn-primary" type="button">Sign Up <i class="bi bi-person"></i></button>
       </div>
-      <a routerLink="admin" routerLinkActive="active" class="btn btn-danger mx-2">Admin</a>
+      <button *ngIf="authenticated" (click)="onLogout()" class="btn btn-outline-primary" type="button"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
+      <a *ngIf="admin" routerLink="admin" routerLinkActive="active" class="btn btn-danger mx-2">Admin</a>
     </div>
   </div>
 </nav>
