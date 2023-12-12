@@ -19,8 +19,8 @@ public class ProductService {
         return repository.findAll();
     }
 
-    public void createProduct(Product product) {
-        repository.save(product);
+    public Product createProduct(Product product) {
+        return repository.save(product);
     }
 
     public Optional<Product> getProductById(Integer id) {

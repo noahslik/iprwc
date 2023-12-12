@@ -3,6 +3,8 @@ package nl.noahslik.iprwc.controller;
 import nl.noahslik.iprwc.model.Product;
 import nl.noahslik.iprwc.service.ProductService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -23,12 +25,16 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
-    private Optional<Product> getProductById(@PathVariable Integer id) {
-        return service.getProductById(id);
+    private ResponseEntity<Optional<Product>> getProductById(@PathVariable Integer id) {
+        Optional<Product> product = service.getProductById(id);
+        if (product.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
     @PostMapping()
-    private void createProduct(@RequestBody Product product) {
-        service.createProduct(product);
+    private Product createProduct(@RequestBody Product product) {
+        return service.createProduct(product);
     }
 }

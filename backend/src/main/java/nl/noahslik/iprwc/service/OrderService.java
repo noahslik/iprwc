@@ -13,8 +13,8 @@ public class OrderService {
 
     public OrderService(OrderRepository repository) { this.repository = repository; }
 
-    public void createOrder(Order order) {
-        this.repository.save(order);
+    public Order createOrder(Order order) {
+        return this.repository.save(order);
     }
 
     public Optional<Order> getOrderById(Integer orderId) {
