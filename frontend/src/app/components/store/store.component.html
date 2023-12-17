@@ -1,3 +1,10 @@
-<div class=" card-group justify-content-center">
-    <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+<div class="container">
+    <div class="input-group mt-3 mb-4">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+            aria-describedby="searchBox" [formControl]="searchBox">
+        <span class="input-group-text" id="searchBox"><i class="bi bi-search"></i></span>
+    </div>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+        <app-product-card *ngFor="let product of (products | productFilter:searchBox.value!)" [product]="product"></app-product-card>
+    </div>
 </div>

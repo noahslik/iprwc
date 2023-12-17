@@ -1,16 +1,15 @@
 <div class="card mb-3">
     <div class="card-body">
-      <h5 class="card-title">{{ item.product.name }}</h5>
-      <p class="card-text">{{ item.product.artist }}</p>
-      <p class="card-text">Price: {{ item.product.price | currency }}</p>
-      <div class="input-group">
-        <span class="input-group-prepend">
-          <button class="btn btn-outline-secondary" (click)="decreaseQuantity()" >-</button>
-        </span>
-        <input type="number" class="form-control" [(ngModel)]="item.amount" min="1">
-        <span class="input-group-append">
-          <button class="btn btn-outline-secondary" (click)="increaseQuantity()">+</button>
-        </span>
-      </div>
+        <h5 class="card-title">{{ item.product.name }}</h5>
+        <p class="card-text">{{ item.product.artist }}</p>
+        <p class="card-text">Price: {{ item.product.price | currency }}</p>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="amount">Amount</span>
+            <input [contentEditable]="false" min="1" max="100" oninput="validity.valid||(value='');"
+                [formControl]="amount" type="number" class="form-control" placeholder="Amount" aria-label="Amount"
+                aria-describedby="amount">
+            <button [disabled]="!amount.valid" (click)="onClickUpdate($event)" class="btn btn-outline-primary" type="button" id="updateButton">Update</button>
+            <button (click)="removeItem()" class="btn btn-danger" type="button">X</button>
+        </div>
     </div>
-  </div>
+</div>

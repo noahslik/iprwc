@@ -17,8 +17,9 @@ public class OrderController {
     public OrderController(OrderService service) { this.service = service; }
 
     @PostMapping
-    private Order createOrder(@RequestBody Order order) {
-        return this.service.createOrder(order);
+    private ResponseEntity<Order> createOrder(@RequestBody Order order) {
+        Order createdOrder = this.service.createOrder(order);
+        return new ResponseEntity<>(createdOrder, HttpStatus.OK);
     }
 
     @GetMapping("{orderId}")
@@ -31,7 +32,7 @@ public class OrderController {
     }
 
     @GetMapping()
-    private List<Order> getOrdersByUserId(@RequestParam Integer userId) {
+    private List<Order> getOrdersByUserId(@RequestParam String userId) {
         return this.service.getOrdersByUserId(userId);
     }
 }

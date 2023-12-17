@@ -21,7 +21,7 @@ public class OrderService {
         return this.repository.findById(orderId);
     }
 
-    public List<Order> getOrdersByUserId(Integer userId) {
+    public List<Order> getOrdersByUserId(String userId) {
         return this.repository.findByUserId(userId);
     }
 }

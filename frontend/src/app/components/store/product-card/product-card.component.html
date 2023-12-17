@@ -1,10 +1,13 @@
-<div class="card text-center m-2">
-    <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">{{product.artist}}</p>
-        <p class="card-text">{{product.price | currency}}</p>
-        <button type="button" class="btn btn-primary" (click)="addToBasket(product)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasright"><i class="bi bi-bag-check"></i> Add to basket</button>
+<div class="col">
+    <div class="card text-center h-100">
+        <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.artist}}</p>
+            <p class="card-text">{{product.price | currency}}</p>
+        </div>
+        <div class="card-footer">
+            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" (click)="addToBasket(product)" class="btn btn-primary"><i class="bi bi-bag-check-fill"></i> Add to basket</button>
+        </div>
     </div>
 </div>

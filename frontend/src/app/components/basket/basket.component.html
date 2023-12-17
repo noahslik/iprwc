@@ -7,7 +7,7 @@
         <app-basket-item *ngFor="let item of getBasketItems()" [item]="item"></app-basket-item>
         <div class="text-end">
             <p>Total Price: {{ getTotalPrice() | currency }}</p>
-            <button class="btn btn-primary" (click)="checkout()">Checkout</button>
+            <button class="btn btn-primary" (click)="checkout()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">Checkout</button>
         </div>
     </div>
     <div *ngIf="!getLength()" class="offcanvas-body">

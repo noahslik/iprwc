@@ -1,6 +1,7 @@
 <div class="container">
     <h3>Checkout</h3>
-    <form class="bg-info-subtle border border-info-subtle rounded p-2" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <form class="bg-info-subtle border border-info-subtle rounded p-2" [formGroup]="checkoutForm"
+        (ngSubmit)="onSubmit()">
         <div class="mb-3 input-group">
             <span class="input-group-text">First name</span>
             <input class="form-control" type="text" formControlName="firstName">
@@ -27,8 +28,26 @@
         </div>
         <hr>
         <div class="d-flex">
-            <button [disabled]="!checkoutForm.valid" type="submit" class="btn btn-primary">Place Order</button>
-            <p class="m-2 px-2 border border-info-subtle rounded bg-white">Total: </p>
+            <button [disabled]="!checkoutForm.valid" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Place Order</button>
+            <p class="m-2 px-2 border border-info-subtle rounded bg-white">Total: {{total | currency}}</p>
         </div>
     </form>
+</div>
+
+<div class="modal fade" id="orderModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalTitle">Your order has been placed</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for shopping with us!</p>
+            </div>
+            <div class="modal-footer">
+                <button (click)="onModalClose()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Back to store</button>
+            </div>
+        </div>
+    </div>
 </div>
