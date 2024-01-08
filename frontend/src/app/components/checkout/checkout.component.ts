@@ -86,7 +86,7 @@ export class CheckoutComponent {
             zip: zip,
             city: city,
             country: country,
-            userId: this.userId,
+            userId: this.userId.substring(6),
             orderItems: orderItems
         }
 

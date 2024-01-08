@@ -4,6 +4,7 @@ import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import org.springframework.lang.NonNull;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -18,6 +19,7 @@ public class Order {
     private String zip;
     private String city;
     private String country;
+    private BigDecimal price;
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
@@ -91,5 +93,13 @@ public class Order {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
